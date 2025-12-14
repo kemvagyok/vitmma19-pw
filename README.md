@@ -54,7 +54,14 @@ docker-compose run web
 *    The ai service can be accessed from the web container at http://ai:5000/.
 *    The web service is available from the host at: http://[IP_ADDRESS]:8080/ (usually http://localhost:8080/)
 
-
+**WARNING**: If you get the next error line at CLI:
+```bash
+failed to solve: error getting credentials - err: exit status 1, out: ``
+```
+Then according to my experinece, this problem wil be solved with:
+```bash
+docker pull docker pull tensorflow/tensorflow:2.15.0-gpu
+```
 ### File Structure and Functions
 
 [Update according to the final file structure.]
