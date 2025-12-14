@@ -6,7 +6,7 @@ from utils import setup_logger
 import tensorflow as tf
 import keras
 from dataUtils import split_dataset 
-from metricsUtils import OrdinalDistanceLoss
+from metricsUtils import OrdinalDistanceLoss, OrdinalMAE
 logger = setup_logger()
 
 
@@ -58,7 +58,7 @@ def train():
             learning_rate = config.WEIGHT_DECAY
             ),
         loss = OrdinalDistanceLoss(),
-        metrics = [keras.metrics.F1Score(), 'accuracy']
+        metrics = ['accuracy', OrdinalMAE()]
     )
     history = model.fit(
         train_dataset, 

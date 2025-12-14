@@ -5,6 +5,7 @@ from models import baseline_model
 import config
 from dataUtils import split_dataset
 from metricsUtils import Evaluator
+from metricsUtils import OrdinalDistanceLoss, OrdinalMAE
 
 import numpy as np
 from keras.models import load_model
@@ -64,16 +65,22 @@ def evaluate():
     evaluator = Evaluator()
     evaluator = evaluator.evaluate(np.argmax(y_true, axis=1), baselinePredictions)
     logger.info(f"Test baselinemodel accuracy: {evaluator['accuracy']}")
-    logger.info(f"Test baselinemodel F1-Score: {evaluator['f1_macro']}")
+    logger.info(f"Test baselinemodel ordinal_mae: {evaluator['ordinal_mae']}")
 
 
     logger.info("Evaluating advanced model...")
     model = load_model(config.MODEL_SAVE_PATH)
+    model = load_model(
+        config.MODEL_SAVE_PATH,
+        custom_objects={
+            "OrdinalDistanceLoss": OrdinalDistanceLoss
+        }
+    )
     logger.info("Advanced model loaded successfully.")
     logger.info(f"{len(list(test_dataset))} samples in the test dataset.")
-    test_info = model.evaluate(test_dataset)
-
-    logger.info(f"Test advanced model F1-Score: {test_info[1]}")
-
+    loss, acc, ordinal_mae = model.evaluate(x_test, y_test_onehot)
+    logger.info(f"Test advanced model accuracy: {acc}")
+    logger.info(f"Test advanced model ordinal MAE: {ordinal_mae}")
+    logger.info("Evaluating ended")
 if __name__ == "__main__":
     evaluate()
