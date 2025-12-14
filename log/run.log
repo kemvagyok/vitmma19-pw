@@ -1,0 +1,262 @@
+time="2025-12-14T13:21:36+01:00" level=warning msg="/mnt/c/Users/0322s/Documents/GitHub/vitmma19-pw/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Network vitmma19-pw_default  Creating
+ Network vitmma19-pw_default  Created
+ Container vitmma19-pw-ai-1  Creating
+ Container vitmma19-pw-ai-1  Created
+ Container vitmma19-pw-web-1  Creating
+ Container vitmma19-pw-web-1  Created
+Attaching to ai-1, web-1
+ai-1   | [run.sh] Starting full pipeline run at 2025-12-14T12:21:37+00:00
+web-1  |  * Serving Flask app 'main'
+web-1  |  * Debug mode: off
+web-1  | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+web-1  |  * Running on all addresses (0.0.0.0)
+web-1  |  * Running on http://127.0.0.1:5000
+web-1  |  * Running on http://172.18.0.3:5000
+web-1  | [33mPress CTRL+C to quit[0m
+ai-1   | 2025-12-14 12:21:38.247771: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+ai-1   | 2025-12-14 12:21:38.247853: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+ai-1   | 2025-12-14 12:21:38.250355: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ai-1   | 2025-12-14 12:21:38.260695: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+ai-1   | To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ai-1   | 2025-12-14 12:21:39,887 - INFO - Preprocessing data...
+ai-1   | Letöltés indítása: https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQB8kDcLEuTqQphHx7pv4Cw5AW7XMJp5MUbwortTASU223A?e=Uu6CTj&download=1
+ai-1   | A letöltött tartalom átadása a zipfile modulnak...
+ai-1   | 
+ai-1   | ✅ Sikeres letöltés és kibontás!
+ai-1   | A fájlok itt találhatók: /app/data
+ai-1   | 2025-12-14 12:21:56,864 - WARNING - Nincs JSON fájl: dataset
+ai-1   | 2025-12-14 12:21:56,925 - INFO - 369 labels after consensus voting (with own labels: True)
+ai-1   | 2025-12-14 12:21:56.978169: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:56.990015: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:56.990173: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:56.993101: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:56.993182: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:56.993212: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:57.247395: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:57.247476: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:57.247487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2022] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+ai-1   | 2025-12-14 12:21:57.247527: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:21:57.247573: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2244 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1650, pci bus id: 0000:10:00.0, compute capability: 7.5
+ai-1   | Corrupt JPEG data: 2 extraneous bytes before marker 0xd7
+ai-1   | Corrupt JPEG data: 3 extraneous bytes before marker 0xd7
+ai-1   | Corrupt JPEG data: 3 extraneous bytes before marker 0xd0
+ai-1   | Corrupt JPEG data: 5 extraneous bytes before marker 0xd7
+ai-1   | Unsuccesful loading image: /app/data/anklealign/C6037J/internet_freepik_02.jpg
+ai-1   | Unsuccesful loading image: /app/data/anklealign/C6037J/internet_hss.edu_01.jpg
+ai-1   | Unsuccesful loading image: /app/data/anklealign/C6037J/internet_windsorstore_01.jpg
+ai-1   | Unsuccesful loading image: /app/data/anklealign/C6037J/internet_windsorstore_02.jpg
+ai-1   | Unsuccesful loading image: /app/data/anklealign/FO6K58/internet_freepik_01.jpg
+ai-1   | Unsuccesful loading image: /app/data/anklealign/FO6K58/internet_shutterstock_01_01.webp
+ai-1   | Unsuccesful loading image: /app/data/anklealign/FO6K58/internet_shutterstock_03_01.webp
+ai-1   | 2025-12-14 12:22:15,430 - INFO - 335 images processed and added to the dataset
+ai-1   | 2025-12-14 12:22:15,476 - INFO - 34 was skipped due to errors or missing files.
+ai-1   | 2025-12-14 12:22:15,920 - INFO - Preprocessing complete. Dataset saved to /app/data/anklealign/dataset
+ai-1   | 2025-12-14 12:22:17.133360: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+ai-1   | 2025-12-14 12:22:17.133482: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+ai-1   | 2025-12-14 12:22:17.135802: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ai-1   | 2025-12-14 12:22:17.144023: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+ai-1   | To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ai-1   | 2025-12-14 12:22:19,237 - INFO - Starting training process...
+ai-1   | 2025-12-14 12:22:19,237 - INFO - Loaded configuration:
+ai-1   | Epochs: 50
+ai-1   | Batch size: 32
+ai-1   | Training size: 0.64
+ai-1   | Learning rate: 0.001
+ai-1   | Weight decay: 0.001
+ai-1   | 
+ai-1   | 2025-12-14 12:22:19,237 - INFO - Loading train, validation dataset...
+ai-1   | 2025-12-14 12:22:19.279245: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.287563: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.287633: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.289321: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.289382: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.289409: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.498950: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.499021: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.499031: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2022] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+ai-1   | 2025-12-14 12:22:19.499067: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:22:19.499102: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2244 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1650, pci bus id: 0000:10:00.0, compute capability: 7.5
+ai-1   | 2025-12-14 12:22:21,309 - INFO - 6 samples in the train dataset.
+ai-1   | 2025-12-14 12:22:21,812 - INFO - 2 samples in the validation dataset.
+ai-1   | Epoch 1/50
+ai-1   | 2025-12-14 12:22:23.243834: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8906
+ai-1   | 2025-12-14 12:22:23.920045: I external/local_xla/xla/service/service.cc:168] XLA service 0x7d2e3e0b3810 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+ai-1   | 2025-12-14 12:22:23.920093: I external/local_xla/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1650, Compute Capability 7.5
+ai-1   | 2025-12-14 12:22:23.926254: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+ai-1   | WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+ai-1   | I0000 00:00:1765714944.000198     160 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+ai-1   | 1/6 [====>.........................] - ETA: 16s - loss: 0.6871 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7091 - accuracy: 0.4531 - ordinal_mae: 0.5469 6/6 [==============================] - 4s 174ms/step - loss: 0.7175 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8230 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 2/50
+ai-1   | 1/6 [====>.........................] - ETA: 6s - loss: 0.6707 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7023 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 2s 125ms/step - loss: 0.7113 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8278 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 3/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6618 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7026 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 127ms/step - loss: 0.7117 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8311 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 4/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6637 - accuracy: 0.5000 - ordinal_mae: 0.50003/6 [==============>...............] - ETA: 0s - loss: 0.7315 - accuracy: 0.4167 - ordinal_mae: 0.58335/6 [========================>.....] - ETA: 0s - loss: 0.6983 - accuracy: 0.4563 - ordinal_mae: 0.54376/6 [==============================] - 1s 138ms/step - loss: 0.7107 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8296 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 5/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6645 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7007 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 116ms/step - loss: 0.7102 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8273 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 6/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6637 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7010 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 123ms/step - loss: 0.7099 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8262 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 7/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6627 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7012 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 130ms/step - loss: 0.7102 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8271 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 8/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6635 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7005 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 118ms/step - loss: 0.7099 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8277 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 9/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6636 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.7001 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 128ms/step - loss: 0.7096 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8279 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 10/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6633 - accuracy: 0.5000 - ordinal_mae: 0.50003/6 [==============>...............] - ETA: 0s - loss: 0.7305 - accuracy: 0.4167 - ordinal_mae: 0.58336/6 [==============================] - ETA: 0s - loss: 0.7095 - accuracy: 0.4427 - ordinal_mae: 0.55736/6 [==============================] - 1s 133ms/step - loss: 0.7095 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8279 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 11/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6631 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6996 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 147ms/step - loss: 0.7092 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8277 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 12/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6629 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6992 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 136ms/step - loss: 0.7090 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8276 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 13/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6629 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6987 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 127ms/step - loss: 0.7085 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8274 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 14/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6624 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6982 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 120ms/step - loss: 0.7083 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8273 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 15/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6625 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6972 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - ETA: 0s - loss: 0.7077 - accuracy: 0.4427 - ordinal_mae: 0.55736/6 [==============================] - 1s 150ms/step - loss: 0.7077 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8274 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 16/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6625 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6965 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 128ms/step - loss: 0.7071 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8269 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 17/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6618 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6954 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 126ms/step - loss: 0.7066 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8278 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 18/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6614 - accuracy: 0.5000 - ordinal_mae: 0.50003/6 [==============>...............] - ETA: 0s - loss: 0.7253 - accuracy: 0.4167 - ordinal_mae: 0.58335/6 [========================>.....] - ETA: 0s - loss: 0.6926 - accuracy: 0.4563 - ordinal_mae: 0.54376/6 [==============================] - 1s 136ms/step - loss: 0.7058 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8271 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 19/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6609 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6929 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 121ms/step - loss: 0.7052 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8271 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 20/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6612 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6914 - accuracy: 0.4609 - ordinal_mae: 0.53916/6 [==============================] - 1s 130ms/step - loss: 0.7040 - accuracy: 0.4479 - ordinal_mae: 0.5521 - val_loss: 0.8265 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 21/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6595 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6899 - accuracy: 0.4688 - ordinal_mae: 0.53126/6 [==============================] - 1s 131ms/step - loss: 0.7032 - accuracy: 0.4531 - ordinal_mae: 0.5469 - val_loss: 0.8261 - val_accuracy: 0.3030 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 22/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6592 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6881 - accuracy: 0.4688 - ordinal_mae: 0.53126/6 [==============================] - 1s 132ms/step - loss: 0.7021 - accuracy: 0.4531 - ordinal_mae: 0.5469 - val_loss: 0.8265 - val_accuracy: 0.3333 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 23/50
+ai-1   | 1/6 [====>.........................] - ETA: 3s - loss: 0.6588 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6858 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 121ms/step - loss: 0.7009 - accuracy: 0.4427 - ordinal_mae: 0.5573 - val_loss: 0.8270 - val_accuracy: 0.3333 - val_ordinal_mae: 0.6970
+ai-1   | Epoch 24/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6581 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6841 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 128ms/step - loss: 0.6998 - accuracy: 0.4479 - ordinal_mae: 0.5521 - val_loss: 0.8272 - val_accuracy: 0.3636 - val_ordinal_mae: 0.6667
+ai-1   | Epoch 25/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6577 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6819 - accuracy: 0.4531 - ordinal_mae: 0.54696/6 [==============================] - 1s 129ms/step - loss: 0.6985 - accuracy: 0.4479 - ordinal_mae: 0.5521 - val_loss: 0.8275 - val_accuracy: 0.3636 - val_ordinal_mae: 0.6667
+ai-1   | Epoch 26/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6570 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6803 - accuracy: 0.4609 - ordinal_mae: 0.53916/6 [==============================] - 1s 132ms/step - loss: 0.6974 - accuracy: 0.4531 - ordinal_mae: 0.5469 - val_loss: 0.8273 - val_accuracy: 0.3636 - val_ordinal_mae: 0.6667
+ai-1   | Epoch 27/50
+ai-1   | 1/6 [====>.........................] - ETA: 11s - loss: 0.6563 - accuracy: 0.5000 - ordinal_mae: 0.50004/6 [===================>..........] - ETA: 0s - loss: 0.6781 - accuracy: 0.4609 - ordinal_mae: 0.5391 6/6 [==============================] - 3s 131ms/step - loss: 0.6962 - accuracy: 0.4531 - ordinal_mae: 0.5469 - val_loss: 0.8271 - val_accuracy: 0.3939 - val_ordinal_mae: 0.6364
+ai-1   | Epoch 28/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6563 - accuracy: 0.5000 - ordinal_mae: 0.50003/6 [==============>...............] - ETA: 0s - loss: 0.7075 - accuracy: 0.4062 - ordinal_mae: 0.59385/6 [========================>.....] - ETA: 0s - loss: 0.6784 - accuracy: 0.4688 - ordinal_mae: 0.53126/6 [==============================] - 1s 138ms/step - loss: 0.6949 - accuracy: 0.4531 - ordinal_mae: 0.5469 - val_loss: 0.8275 - val_accuracy: 0.4242 - val_ordinal_mae: 0.6061
+ai-1   | Epoch 29/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6558 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6741 - accuracy: 0.4844 - ordinal_mae: 0.51566/6 [==============================] - 1s 130ms/step - loss: 0.6938 - accuracy: 0.4635 - ordinal_mae: 0.5365 - val_loss: 0.8289 - val_accuracy: 0.4242 - val_ordinal_mae: 0.6061
+ai-1   | Epoch 30/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6554 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6728 - accuracy: 0.4844 - ordinal_mae: 0.51566/6 [==============================] - 1s 124ms/step - loss: 0.6925 - accuracy: 0.4635 - ordinal_mae: 0.5365 - val_loss: 0.8267 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 31/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6540 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6707 - accuracy: 0.4844 - ordinal_mae: 0.51566/6 [==============================] - 1s 127ms/step - loss: 0.6915 - accuracy: 0.4635 - ordinal_mae: 0.5365 - val_loss: 0.8275 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 32/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6538 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6693 - accuracy: 0.4922 - ordinal_mae: 0.50786/6 [==============================] - 1s 125ms/step - loss: 0.6903 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8276 - val_accuracy: 0.4848 - val_ordinal_mae: 0.5455
+ai-1   | Epoch 33/50
+ai-1   | 1/6 [====>.........................] - ETA: 3s - loss: 0.6528 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6671 - accuracy: 0.4922 - ordinal_mae: 0.50786/6 [==============================] - 1s 121ms/step - loss: 0.6895 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8307 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 34/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6536 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6661 - accuracy: 0.4922 - ordinal_mae: 0.50786/6 [==============================] - 1s 132ms/step - loss: 0.6877 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8271 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 35/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6506 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6648 - accuracy: 0.5000 - ordinal_mae: 0.50006/6 [==============================] - 1s 135ms/step - loss: 0.6877 - accuracy: 0.4740 - ordinal_mae: 0.5260 - val_loss: 0.8322 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 36/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6534 - accuracy: 0.5312 - ordinal_mae: 0.46883/6 [==============>...............] - ETA: 0s - loss: 0.6948 - accuracy: 0.4688 - ordinal_mae: 0.53125/6 [========================>.....] - ETA: 0s - loss: 0.6672 - accuracy: 0.5063 - ordinal_mae: 0.49386/6 [==============================] - 1s 141ms/step - loss: 0.6860 - accuracy: 0.4792 - ordinal_mae: 0.5208 - val_loss: 0.8298 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 37/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6506 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6622 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 128ms/step - loss: 0.6854 - accuracy: 0.4792 - ordinal_mae: 0.5208 - val_loss: 0.8316 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 38/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6510 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6612 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 132ms/step - loss: 0.6850 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8326 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 39/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6515 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6598 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 128ms/step - loss: 0.6835 - accuracy: 0.4740 - ordinal_mae: 0.5260 - val_loss: 0.8331 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 40/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6488 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6593 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 125ms/step - loss: 0.6831 - accuracy: 0.4740 - ordinal_mae: 0.5260 - val_loss: 0.8332 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 41/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6502 - accuracy: 0.5312 - ordinal_mae: 0.46883/6 [==============>...............] - ETA: 0s - loss: 0.6901 - accuracy: 0.4688 - ordinal_mae: 0.53125/6 [========================>.....] - ETA: 0s - loss: 0.6622 - accuracy: 0.5063 - ordinal_mae: 0.49386/6 [==============================] - 1s 130ms/step - loss: 0.6818 - accuracy: 0.4792 - ordinal_mae: 0.5208 - val_loss: 0.8357 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 42/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6472 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6585 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 141ms/step - loss: 0.6826 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8355 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 43/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6507 - accuracy: 0.5625 - ordinal_mae: 0.43754/6 [===================>..........] - ETA: 0s - loss: 0.6558 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 128ms/step - loss: 0.6805 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8373 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 44/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6470 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6562 - accuracy: 0.5000 - ordinal_mae: 0.50006/6 [==============================] - 1s 127ms/step - loss: 0.6800 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8339 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 45/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6457 - accuracy: 0.5625 - ordinal_mae: 0.43754/6 [===================>..........] - ETA: 0s - loss: 0.6549 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 135ms/step - loss: 0.6794 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8370 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 46/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6458 - accuracy: 0.5625 - ordinal_mae: 0.43754/6 [===================>..........] - ETA: 0s - loss: 0.6539 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 113ms/step - loss: 0.6785 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8369 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 47/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6452 - accuracy: 0.5625 - ordinal_mae: 0.43754/6 [===================>..........] - ETA: 0s - loss: 0.6529 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 124ms/step - loss: 0.6775 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8386 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 48/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6442 - accuracy: 0.5625 - ordinal_mae: 0.43754/6 [===================>..........] - ETA: 0s - loss: 0.6525 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 125ms/step - loss: 0.6773 - accuracy: 0.4635 - ordinal_mae: 0.5365 - val_loss: 0.8375 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 49/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6461 - accuracy: 0.5312 - ordinal_mae: 0.46884/6 [===================>..........] - ETA: 0s - loss: 0.6505 - accuracy: 0.5000 - ordinal_mae: 0.50006/6 [==============================] - 1s 133ms/step - loss: 0.6758 - accuracy: 0.4635 - ordinal_mae: 0.5365 - val_loss: 0.8394 - val_accuracy: 0.4545 - val_ordinal_mae: 0.5758
+ai-1   | Epoch 50/50
+ai-1   | 1/6 [====>.........................] - ETA: 2s - loss: 0.6432 - accuracy: 0.5625 - ordinal_mae: 0.43754/6 [===================>..........] - ETA: 0s - loss: 0.6503 - accuracy: 0.5078 - ordinal_mae: 0.49226/6 [==============================] - 1s 138ms/step - loss: 0.6753 - accuracy: 0.4688 - ordinal_mae: 0.5312 - val_loss: 0.8384 - val_accuracy: 0.4242 - val_ordinal_mae: 0.6061
+ai-1   | 2025-12-14 12:23:27,133 - INFO - Training complete.
+ai-1   | 2025-12-14 12:23:28.538800: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+ai-1   | 2025-12-14 12:23:28.538859: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+ai-1   | 2025-12-14 12:23:28.540857: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ai-1   | 2025-12-14 12:23:28.548174: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+ai-1   | To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ai-1   | 2025-12-14 12:23:32,380 - INFO - 
+ai-1   | Evaluating models...
+ai-1   | 2025-12-14 12:23:32,380 - INFO - Loading test dataset...
+ai-1   | 2025-12-14 12:23:32.424390: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.433929: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.434021: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.435773: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.435830: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.435857: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.629244: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.629321: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.629332: I tensorflow/core/common_runtime/gpu/gpu_device.cc:2022] Could not identify NUMA node of platform GPU id 0, defaulting to 0.  Your kernel may not have been built with NUMA support.
+ai-1   | 2025-12-14 12:23:32.629368: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:887] could not open file to read NUMA node: /sys/bus/pci/devices/0000:10:00.0/numa_node
+ai-1   | Your kernel may have been built without NUMA support.
+ai-1   | 2025-12-14 12:23:32.629405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2244 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1650, pci bus id: 0000:10:00.0, compute capability: 7.5
+ai-1   | 2025-12-14 12:23:34,087 - INFO - Loaded...
+ai-1   | 2025-12-14 12:23:34,087 - INFO - Evaluating baselinemodel...
+ai-1   | /usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+ai-1   |   _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+ai-1   | /usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+ai-1   |   _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+ai-1   | /usr/local/lib/python3.11/dist-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+ai-1   |   _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+ai-1   | 2025-12-14 12:23:34,648 - INFO - Test baselinemodel accuracy: 0.42045454545454547
+ai-1   | 2025-12-14 12:23:34,648 - INFO - Test baselinemodel ordinal_mae: 0.5795454545454546
+ai-1   | 2025-12-14 12:23:34,648 - INFO - Evaluating advanced model...
+ai-1   | 2025-12-14 12:23:34,841 - INFO - Advanced model loaded successfully.
+ai-1   | 2025-12-14 12:23:35,388 - INFO - 3 samples in the test dataset.
+ai-1   | 2025-12-14 12:23:36.208924: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8906
+ai-1   | 1/3 [=========>....................] - ETA: 2s - loss: 0.7887 - accuracy: 0.3125 - ordinal_mae: 0.68753/3 [==============================] - ETA: 0s - loss: 0.6936 - accuracy: 0.4432 - ordinal_mae: 0.55683/3 [==============================] - 2s 122ms/step - loss: 0.6936 - accuracy: 0.4432 - ordinal_mae: 0.5568
+ai-1   | 2025-12-14 12:23:37,106 - INFO - Test advanced model ordinal_mae: 0.4431818127632141
+ai-1   | 2025-12-14 12:23:38.227677: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+ai-1   | 2025-12-14 12:23:38.227744: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+ai-1   | 2025-12-14 12:23:38.229255: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+ai-1   | 2025-12-14 12:23:38.235556: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+ai-1   | To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ai-1   |  * Serving Flask app '04-inference'
+ai-1   |  * Debug mode: off
+ai-1   | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ai-1   |  * Running on all addresses (0.0.0.0)
+ai-1   |  * Running on http://127.0.0.1:5000
+ai-1   |  * Running on http://172.18.0.2:5000
+ai-1   | [33mPress CTRL+C to quit[0m

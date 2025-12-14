@@ -3,13 +3,13 @@
 # and must be adapted to your project topic (dependencies, system packages,
 # runtime, GPU support, volumes, entrypoint behaviour etc.).
 
-FROM python:3.9-slim
+FROM tensorflow/tensorflow:2.15.0-gpu
 
 WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade --ignore-installed -r requirements.txt
 
 # Copy source code and notebooks
 COPY src/ src/
