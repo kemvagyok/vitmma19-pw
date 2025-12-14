@@ -47,7 +47,7 @@ docker-compose run -v  /absolute/path/to/your/local/data:/app/data ai  > log/run
 Run the following command in the root directory of the repository to build the Docker image of web service, and run the container:
 #### Run
 ```bash
-docker-compose run ai
+docker-compose run web
 ```
 *    The web service listens on port 5000 inside the container and is mapped to port 8080 on the host.
 *    The web service depends on the ai service, which runs in its own container.
