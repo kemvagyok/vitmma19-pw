@@ -111,3 +111,6 @@ The repository is structured as follows:
     - `docker-compose.yaml`: Two services – `web` (ports 8080→5000) and `ai` (GPU-enabled). `web` depends on `ai`. Both build from their respective directories.
     - `requirements.txt`: List of Python dependencies required of AI service for the project.
     - `README.md`: Project documentation and instructions.
+ 
+### Incremental development:
+Link: https://wandb.ai/vitmma19/better-cnn-incremental?nw=nwuser0322sagibenedek
