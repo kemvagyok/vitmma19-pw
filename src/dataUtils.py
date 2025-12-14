@@ -15,45 +15,40 @@ import config
 # ======================
 
 def ensure_data_dir():
-    # A ZIP fájl URL-je
     zip_url = 'https://bmeedu-my.sharepoint.com/:u:/g/personal/gyires-toth_balint_vik_bme_hu/IQB8kDcLEuTqQphHx7pv4Cw5AW7XMJp5MUbwortTASU223A?e=Uu6CTj&download=1'
 
-    # A helyi útvonal, ahova a kibontott tartalmat menteni szeretnéd
-    # (Ez a mappa fog létrejönni, ha még nem létezik)
-    kibontas_cel_konyvtar = config.DATA_ROOT_DIR
 
-    # --- Letöltés és Kibontás ---
+    zipping_data_dir = config.DATA_ROOT_DIR
+
+    # --- Downloading és extracting ---
 
     try:
-        print(f"Letöltés indítása: {zip_url}")
-        # 1. Letöltés a requests könyvtárral
-        # stream=True, hogy ne töltse le azonnal a teljes fájlt a memóriába
+        # 1. Data downloading with request
         response = requests.get(zip_url, stream=True)
-        response.raise_for_status()  # Hibát dob, ha a státuszkód nem 200 (pl. 404, 500)
+        response.raise_for_status()  # Error raising, if it is 200 (for ex. 404, 500)
 
-        # 2. Előkészület a kibontásra: In-memory fájlként kezelés
-        print("A letöltött tartalom átadása a zipfile modulnak...")
+        # 2. The downloaded data is for zipfile extracting
         zip_in_memory = io.BytesIO(response.content)
 
-        # 3. Kibontás
+        # 3. Extracting
         with zipfile.ZipFile(zip_in_memory, 'r') as zip_ref:
-            # Létrehozzuk a célkönyvtárat, ha még nem létezik
-            if not os.path.exists(kibontas_cel_konyvtar):
-                os.makedirs(kibontas_cel_konyvtar)
-                print(f"Létrehozott célkönyvtár: {kibontas_cel_konyvtar}")
+            # Create the target directory if it does not already exist
+            if not os.path.exists(zipping_data_dir):
+                os.makedirs(zipping_data_dir)
+                print(f"Destination directory created: {zipping_data_dir}")
 
-            # Kibontás a megadott célkönyvtárba
-            zip_ref.extractall(kibontas_cel_konyvtar)
+            # Extract to the specified destination directory
+            zip_ref.extractall(zipping_data_dir)
             
-            print("\n✅ Sikeres letöltés és kibontás!")
-            print(f"A fájlok itt találhatók: {os.path.abspath(kibontas_cel_konyvtar)}")
+            print("\n Download and extraction successful!")
+            print(f"The files can be found here: {os.path.abspath(zipping_data_dir)}")
 
     except requests.exceptions.RequestException as e:
-        print(f"Hiba a letöltés során (pl. rossz URL, hálózati hiba): {e}")
+        print(f"Error in downloading: (for ex. bad URL, error network): {e}")
     except zipfile.BadZipFile:
-        print("Hiba a ZIP fájl kibontásakor: A letöltött fájl nem érvényes vagy sérült ZIP archívum.")
+        print("Error in the ZIP file extracting: The downloaded file is not good or not good ZIP archive.")
     except Exception as e:
-        print(f"Ismeretlen hiba történt: {e}")
+        print(f":Unknown error {e}")
     
 
 # ======================

@@ -52,6 +52,7 @@ def train():
     logger.info(f"{len(list(val_dataset))} samples in the validation dataset.")
     # Simulation of training loop
     model = models.advancedCNNModel()
+    logger.info(f"About the advanced model: {model.summary()} ")
     model.compile(
         optimizer=keras.optimizers.Adam(
             weight_decay = config.LEARNING_RATE,

@@ -56,6 +56,7 @@ def get_own_labels(data_dir: str, exclude: set) -> pd.DataFrame:
 def preprocess():
     logger.info("Preprocessing data...")
     #--- Data downloading ---
+    logger.info("Data downloading starts..")
     ensure_data_dir()
     # --- Config ---
     exclude_consensus = {'anklealign-consensus.txt', 'DPMC6W.json', 'ITWQ3V.json'}
