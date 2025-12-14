@@ -124,7 +124,7 @@ docker-compose run ai
 *    The web service listens on port 5000 inside the container and is mapped to port 8080 on the host.
 *    The web service depends on the ai service, which runs in its own container.
 *    The ai service can be accessed from the web container at http://ai:5000/.
-*    The web service is available from the host at: http://[IP_ADDRESS]:8080/
+*    The web service is available from the host at: http://[IP_ADDRESS]:8080/ (usually http://localhost:8080/)
 
 
 ### File Structure and Functions
@@ -138,17 +138,38 @@ The repository is structured as follows:
     - `02-training.py`: The main script for defining the model and executing the training loop.
     - `03-evaluation.py`: Scripts for evaluating the trained model on test data and generating metrics.
     - `04-inference.py`: Script for running the model on new, unseen data to generate predictions.
-    - `config.py`: Configuration file containing hyperparameters (e.g., epochs) and paths.
-    - `utils.py`: Helper functions and utilities used across different scripts.
+    - `config.py`: Configuration file containing hyperparameters (e.g., epochs), settings and paths.
+    - `utils.py` – General helper functions used across scripts, e.g.:
+        - Logging setup
+    
+    - `metricsUtils.py` – Functions for model evaluation and metrics, e.g.:
+        - Accuracy, precision, recall calculations
+        - Confusion matrix generation
+        - Custom metric functions
+    
+    - `dataUtils.py` – Data-related utilities, e.g.:
+        - Dataset loading and splitting
+        - Feature encoding and normalization
+    
+    - `models.py` – Model-related utilities, e.g.:
+        - Model architectures (CNN, MLP, etc.)
 
 - **`notebook/`**: Contains Jupyter notebooks for analysis and experimentation.
     - `01-data-exploration.ipynb`: Notebook for initial exploratory data analysis (EDA) and visualization.
     - `02-label-analysis.ipynb`: Notebook for analyzing the distribution and properties of the target labels.
+    - `03-incremental_development.ipynb`: Notebook for incremental model development.
 
 - **`log/`**: Contains log files.
     - `run.log`: Example log file showing the output of a successful training run.
 
+- - **`gui/`**: Contains web service files.
+    - `Dockerfile`: Configuration file for building the Docker image of web service with the necessary environment and dependencies.
+    - `requirements.txt`: List of Python dependencies required of AI service for the project.
+    - - **`src/`**: Contains (Flask) Python, and HTML/CSS files.
+        - `main.py`: It is responsible for running frotend.
+        - `templates/`: Contains HTML/CSS files
 - **Root Directory**:
-    - `Dockerfile`: Configuration file for building the Docker image with the necessary environment and dependencies.
-    - `requirements.txt`: List of Python dependencies required for the project.
+    - `Dockerfile`: Configuration file for building the Docker image of AI service with the necessary environment and dependencies.
+    - 
+    - `requirements.txt`: List of Python dependencies required of AI service for the project.
     - `README.md`: Project documentation and instructions.
