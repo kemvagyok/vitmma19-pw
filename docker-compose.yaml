@@ -9,6 +9,8 @@ services:
       - ai
   ai:
     build: .
+    volumes:
+      - ${HOST_DATA_DIR}:/app/data
     deploy:
       resources:
         reservations:
