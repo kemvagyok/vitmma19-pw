@@ -29,7 +29,7 @@ Yes:
 
 This project is containerized using Docker. Follow the instructions below to build and run the solution.
 
-**!!Warning for lectures: At the in inference the Flask is starting, and listening, maybe it will block your evaluator!!**
+**!!Warning for lectures: At the inference stage the Flask is starting, and listening, maybe it will block your evaluator!!**
 
 #### Build, Run
 ##### AI, Web Service
