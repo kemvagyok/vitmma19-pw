@@ -31,7 +31,7 @@ This project is containerized using Docker. Follow the instructions below to bui
 [Adjust the commands that show how do build your container and run it with log output.]
 
 #### Build, Run
-##### AI
+##### AI Service
 Run the following command in the root directory of the repository to build the Docker image of AI service, and run the container:
 To run the solution, use the following command. You must mount your local data directory to `/app/data` inside the container.
 **To capture the logs for submission (required), redirect the output to a file :** (log/run.log 2>&1)
@@ -43,7 +43,7 @@ docker-compose run -v  /absolute/path/to/your/local/data:/app/data ai  > log/run
 *   The `> log/run.log 2>&1` part ensures that all output (standard output and errors) is saved to `log/run.log`.
 *   The container is configured to run every step (data preprocessing, training, evaluation, inference).
 *   And the inference stage the AI service will be as a backend.
-##### GUI
+##### GUI Service
 Run the following command in the root directory of the repository to build the Docker image of web service, and run the container:
 #### Run
 ```bash
