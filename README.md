@@ -31,16 +31,24 @@ This project is containerized using Docker. Follow the instructions below to bui
 [Adjust the commands that show how do build your container and run it with log output.]
 
 #### Build, Run
-##### AI Service
-Run the following command in the root directory of the repository to build the Docker image of AI service, and run the container:
+##### AI, Web Service
+Run the following command in the root directory of the repository to build the Docker image of AI, web service, and run the two container:
 To run the solution, use the following command. You must mount your local data directory to `/app/data` inside the container.
 **To capture the logs for submission (required), redirect the output to a file :** (log/run.log 2>&1)
-
+Linux / macOS:
 ```bash
-docker-compose run -v  /absolute/path/to/your/local/data:/app/data ai  > log/run.log 2>&1
+HOST_DATA_DIR=/absolute/path/to/your/local/data docker-compose up > log/run.log 2>&1
 ```
+(for example /mnt/c/data)
+Windows:
+```powershell
+$env:HOST_DATA_DIR="/absolute/path/to/your/local/data" 
+docker-compose up > log/run.log 2>&1
+```
+(for example C:/mydata)
 *   Replace `/absolute/path/to/your/local/data` with the actual path to your dataset on your host machine that meets the [Data preparation requirements](#data-preparation).
 *   The `> log/run.log 2>&1` part ensures that all output (standard output and errors) is saved to `log/run.log`.
+(AI Service)
 *   The container is configured to run every step (data preprocessing, training, evaluation, inference).
 *   And the inference stage the AI service will be as a backend.
 
@@ -53,12 +61,7 @@ Then according to my experinece, this problem wil be solved with (Then you will 
 docker pull docker pull tensorflow/tensorflow:2.15.0-gpu
 ```
 
-##### GUI Service
-Run the following command in the root directory of the repository to build the Docker image of web service, and run the container:
-#### Run
-```bash
-docker-compose run web
-```
+(GUI/Web Service)
 *    The web service listens on port 5000 inside the container and is mapped to port 8080 on the host.
 *    The web service depends on the ai service, which runs in its own container.
 *    The ai service can be accessed from the web container at http://ai:5000/.
