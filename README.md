@@ -69,8 +69,6 @@ docker pull docker pull tensorflow/tensorflow:2.15.0-gpu
 
 ### File Structure and Functions
 
-[Update according to the final file structure.]
-
 The repository is structured as follows:
 
 - **`src/`**: Contains the source code for the machine learning pipeline.
