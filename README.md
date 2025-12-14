@@ -43,6 +43,16 @@ docker-compose run -v  /absolute/path/to/your/local/data:/app/data ai  > log/run
 *   The `> log/run.log 2>&1` part ensures that all output (standard output and errors) is saved to `log/run.log`.
 *   The container is configured to run every step (data preprocessing, training, evaluation, inference).
 *   And the inference stage the AI service will be as a backend.
+
+**WARNING**: If you get the next error line at CLI:
+```bash
+failed to solve: error getting credentials - err: exit status 1, out: ``
+```
+Then according to my experinece, this problem wil be solved with (Then you will have to run again the previous command):
+```bash
+docker pull docker pull tensorflow/tensorflow:2.15.0-gpu
+```
+
 ##### GUI Service
 Run the following command in the root directory of the repository to build the Docker image of web service, and run the container:
 #### Run
@@ -54,14 +64,6 @@ docker-compose run web
 *    The ai service can be accessed from the web container at http://ai:5000/.
 *    The web service is available from the host at: http://[IP_ADDRESS]:8080/ (usually http://localhost:8080/)
 
-**WARNING**: If you get the next error line at CLI:
-```bash
-failed to solve: error getting credentials - err: exit status 1, out: ``
-```
-Then according to my experinece, this problem wil be solved with:
-```bash
-docker pull docker pull tensorflow/tensorflow:2.15.0-gpu
-```
 ### File Structure and Functions
 
 [Update according to the final file structure.]
