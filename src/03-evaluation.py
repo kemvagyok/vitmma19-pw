@@ -78,7 +78,7 @@ def evaluate():
     )
     logger.info("Advanced model loaded successfully.")
     logger.info(f"{len(list(test_dataset))} samples in the test dataset.")
-    loss, acc, ordinal_mae = model.evaluate(x_test, y_test_onehot)
+    loss, acc, ordinal_mae = model.evaluate(test_dataset)
     logger.info(f"Test advanced model accuracy: {acc}")
     logger.info(f"Test advanced model ordinal MAE: {ordinal_mae}")
     logger.info("Evaluating ended")
