@@ -170,6 +170,6 @@ The repository is structured as follows:
         - `templates/`: Contains HTML/CSS files
 - **Root Directory**:
     - `Dockerfile`: Configuration file for building the Docker image of AI service with the necessary environment and dependencies.
-    - 
+    - `docker-compose.yaml`: Two services – `web` (ports 8080→5000) and `ai` (GPU-enabled). `web` depends on `ai`. Both build from their respective directories.
     - `requirements.txt`: List of Python dependencies required of AI service for the project.
     - `README.md`: Project documentation and instructions.
