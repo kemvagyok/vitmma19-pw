@@ -28,8 +28,7 @@ Yes:
 ### Docker Instructions
 
 This project is containerized using Docker. Follow the instructions below to build and run the solution.
-[Adjust the commands that show how do build your container and run it with log output.]
-
+**Warning for lectures: At the in inference the Flask is starting, and listening, maybe it will block your evaluator**
 #### Build, Run
 ##### AI, Web Service
 Run the following command in the root directory of the repository to build the Docker image of AI, web service, and run the two container:
