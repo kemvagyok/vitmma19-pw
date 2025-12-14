@@ -16,5 +16,3 @@ def setup_logger(name=__name__):
         logger.addHandler(handler)
     return logger
 
-def load_config():
-    pass

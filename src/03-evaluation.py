@@ -1,10 +1,29 @@
 # Model evaluation script
 # This script evaluates the trained model on the test set and generates metrics.
 from utils import setup_logger
+from models import baseline_model
+import config
+from dataUtils import split_dataset
+from metricsUtils import Evaluator
+
+import numpy as np
 from keras.models import load_model
 import tensorflow as tf
-import config
+
+
 logger = setup_logger()
+
+def getBaselinePredictions(dataset):
+    baselineModel = baseline_model()
+    y_true = []
+    baselinePredictions = []
+    for x, y in dataset:
+        for index in range(len(x)):        
+            baselinePredictions.append(baselineModel())
+            y_true.append(y[index])
+    y_true = np.array(y_true)
+    np_baselinePredictions = np.array(baselinePredictions, dtype=np.float32)
+    return y_true, np_baselinePredictions
 
 def getData(dataset_dir):
     dataset = tf.data.Dataset.load(dataset_dir)
@@ -23,46 +42,38 @@ def getData(dataset_dir):
     def encode_one_hot_tf(x, y):
         y_idx = lookup_table.lookup(y)            # tf.string -> int
         y_one_hot = tf.one_hot(y_idx, depth=num_classes)
-        x.set_shape([256,256,3])                  # fix input shape
+        shape = [config.TARGET_IMAGE_SIZE[0], config.TARGET_IMAGE_SIZE[1], 3]
+        x.set_shape(shape)                 # fix input shape
         return x, y_one_hot
 
     dataset = dataset.map(encode_one_hot_tf)
 
     return dataset
 
-def splittingDataset(dataset, batch_size, train_ratio):
-    # Dataset elemszám meghatározása
-    dataset_size = sum(1 for _ in dataset)
+def evaluate():    
+    
+    logger.info("\nEvaluating models...")
 
-    # Shuffling
-    dataset = dataset.shuffle(buffer_size=dataset_size, seed=42, reshuffle_each_iteration=False)
-
-    # Train/val/test arányok
-    train_size = int(train_ratio * dataset_size)
-    val_size   = int(0.1 * dataset_size)  # tetszőlegesen 10% validáció
-    test_size  = dataset_size - train_size - val_size
-
-    # Split
-    train_dataset = dataset.take(train_size)
-    val_dataset   = dataset.skip(train_size).take(val_size)
-    test_dataset  = dataset.skip(train_size + val_size).take(test_size)
-
-    # Batch (testnél NEM használunk drop_remainder=True)
-    train_dataset = train_dataset.batch(batch_size, drop_remainder=True)
-    val_dataset   = val_dataset.batch(batch_size, drop_remainder=False)
-    test_dataset  = test_dataset.batch(batch_size, drop_remainder=False)
-
-    return train_dataset, val_dataset, test_dataset
-
-def evaluate():
-    logger.info("Evaluating model...")
-
+    logger.info("Loading test dataset...")
     dataset = getData(f"{config.DATA_DIR}/dataset")
-    train_dataset, val_dataset, test_dataset = splittingDataset(dataset, config.BATCH_SIZE, config.TRAINING_SIZE)
+    train_dataset, val_dataset, test_dataset = split_dataset(dataset, config.BATCH_SIZE, config.TRAINING_SIZE)
+    logger.info("Loaded...")
 
+    logger.info("Evaluating baselinemodel...")
+    y_true, baselinePredictions = getBaselinePredictions(test_dataset)
+    evaluator = Evaluator()
+    evaluator = evaluator.evaluate(np.argmax(y_true, axis=1), baselinePredictions)
+    logger.info(f"Test baselinemodel accuracy: {evaluator['accuracy']}")
+    logger.info(f"Test baselinemodel F1-Score: {evaluator['f1_macro']}")
+
+
+    logger.info("Evaluating advanced model...")
     model = load_model(config.MODEL_SAVE_PATH)
-    test_loss, test_acc = model.evaluate(test_dataset)
-    print(f"Test Accuracy: {test_acc}, Test Loss: {test_loss}")
+    logger.info("Advanced model loaded successfully.")
+    logger.info(f"{len(list(test_dataset))} samples in the test dataset.")
+    test_info = model.evaluate(test_dataset)
+
+    logger.info(f"Test advanced model F1-Score: {test_info[1]}")
 
 if __name__ == "__main__":
     evaluate()

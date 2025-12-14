@@ -9,7 +9,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade --ignore-installed -r requirements.txt
 
 # Copy source code and notebooks
 COPY src/ src/
