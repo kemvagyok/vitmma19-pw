@@ -9,8 +9,6 @@ services:
       - ai
   ai:
     build: .
-    volumes:
-        - ./data:/app/data
     deploy:
       resources:
         reservations:
