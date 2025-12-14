@@ -37,7 +37,7 @@ To run the solution, use the following command. You must mount your local data d
 **To capture the logs for submission (required), redirect the output to a file :** (log/run.log 2>&1)
 Linux / macOS:
 ```bash
-HOST_DATA_DIR=/absolute/path/to/your/local/data docker-compose up ai  > log/run.log 2>&1
+HOST_DATA_DIR=/absolute/path/to/your/local/data docker-compose up ai > log/run.log 2>&1
 ```
 (for example /mnt/c/data)
 Windows:
